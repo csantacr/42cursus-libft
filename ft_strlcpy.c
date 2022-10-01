@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/28 17:16:07 by csantacr          #+#    #+#             */
+/*   Updated: 2022/09/28 18:04:23 by csantacr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+
+	i = 0;
+	if (!dstsize)
+		return (ft_strlen((char *) src));
+	while (src[i] && i < dstsize - 1)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen((char *) src));
+}
+
+/* int main(void)
+{
+	//char str1[] = "lorem ipsum";
+	char str2[] = "dolor sit amet";
+
+	//strlcpy(str2, str1, 5);
+	printf("%lu\n", ft_strlcpy(str2, "", 0));
+	printf("%s\n", str2);
+
+	return (0);
+} */
