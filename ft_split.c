@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	return (strings);
 }
 
-int main(void)
+/* int main(void)
 {
 	char *str = "      split       this for   me  !   ";
 	char **strings;
@@ -101,4 +101,4 @@ int main(void)
 	}
 	//printf("test:	%lu\n", sizeof(int));
 	return (0);
-}
+} */
