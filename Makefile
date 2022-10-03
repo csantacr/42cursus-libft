@@ -6,7 +6,7 @@
 #    By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/15 19:17:55 by csantacr          #+#    #+#              #
-#    Updated: 2022/09/28 18:10:53 by csantacr         ###   ########.fr        #
+#    Updated: 2022/10/03 05:33:18 by csantacr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,11 @@ SRC = 	ft_isalpha.c\
 		ft_strdup.c\
 		ft_substr.c\
 		ft_strjoin.c\
+		ft_strtrim.c\
 		ft_split.c\
 		ft_itoa.c\
+		ft_strmapi.c\
+		ft_striteri.c\
 		ft_putchar_fd.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\

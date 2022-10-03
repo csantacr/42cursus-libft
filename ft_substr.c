@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:34:27 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/28 16:57:05 by csantacr         ###   ########.fr       */
+/*   Updated: 2022/10/03 05:09:39 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	if (len > ft_strlen(s))
-		len = ft_strlen(s);
+		len = ft_strlen(s) - start;
 	if (start >= ft_strlen(s))
 		len = 0;
 	substr = (char *) malloc((len + 1) * sizeof(char));
 	if (!substr)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (i < len && s[i])
 	{
 		substr[i] = s[i + start];
 		i++;
@@ -36,8 +36,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 /* int main(void)
 {
-	char *str = "lorem_ipsum_dolor_sit_amet";
+	//char *str = "lorem_ipsum_dolor_sit_amet";
+	//char *str = "";
 
-	printf("%s\n", ft_substr(str, 27, 10));
+	printf("return:	%s\n", ft_substr("hola", 2, 30));
 	return (0);
 } */

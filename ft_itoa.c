@@ -1,35 +1,73 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/02 14:37:48 by csantacr          #+#    #+#             */
+/*   Updated: 2022/10/03 03:54:15 by csantacr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	get_len(long n)
 {
-	int		size;
-	char	*nbr;
-	int i;
+	int	len;
 
-	size = 0;
+	if (n == 0)
+		return (1);
+	len = 0;
+	if (n < 0)
+	{
+		len++;
+		n = -n;
+	}
 	while (n)
 	{
 		n /= 10;
-		size++;
+		len++;
 	}
-	nbr = (char *) malloc((size + 1) * sizeof(char *));
-	i = 0;
-	while (i < size)
-	{
-		nbr[i] = '2';
-		i++;
-	}
-	nbr[i] = '\0';
-	printf("size: %d\n", size);
-	printf("nbr: %s\n", nbr);
-	return (NULL);
+	return (len);
 }
 
-int main(void)
+char	*ft_itoa(int n)
 {
-	int nbr = -6437;
+	char	*str;
+	int		i;
+	long	nbr;
 
+	nbr = (long)n;
+	str = (char *) malloc((get_len(nbr) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = get_len(nbr);
+	if (nbr < 0)
+	{
+		nbr = -nbr;
+		str[0] = '-';
+	}
+	str[i] = '\0';
+	i--;
+	if (nbr == 0)
+		str[i] = '0';
+	while (nbr)
+	{
+		str[i] = (nbr % 10) + 48;
+		nbr /= 10;
+		i--;
+	}
+	return (str);
+}
+
+/* int main(void)
+{
+	// int nbr = -6437;
+	//int nbr = 0;
+	int nbr = 2147483647;
+
+	printf("len:	%d\n", get_len(nbr));
 	printf("return:	%s\n", ft_itoa(nbr));
 	return (0);
-}
+} */

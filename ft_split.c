@@ -1,60 +1,86 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/02 14:46:47 by csantacr          #+#    #+#             */
+/*   Updated: 2022/10/02 23:53:07 by csantacr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	count;
 
 	if (!(*s))
 		return (0);
-	count = 1;
+	count = 0;
 	while (*s)
 	{
-		if (*s == c && *(s + 1) != c)
-			count += 1;
+		if (*s != c && (*(s + 1) == c || !(*(s + 1))))
+			count++;
 		s++;
 	}
 	return (count);
 }
 
-static int	*words_len(int words_count, char *str, char sep)
+static int	*get_words_lens(int words_count, char const *str, char sep)
 {
 	int	*words_lens;
 	int	len;
-	int	word;
 
-	words_lens = (int *) malloc(words_count * sizeof(int));
+	words_lens = (int *) malloc((words_count + 1) * sizeof(int));
 	if (!words_lens)
 		return (NULL);
 	len = 0;
-	word = 0;
 	while (*str)
 	{
 		if (*str == sep)
 		{
-			words_lens[word] = len;
 			len = 0;
-			word++;
+			str++;
+			continue ;
 		}
-		else
-			len++;
+		len++;
+		if (*(str + 1) == sep || *(str + 1) == '\0')
+		{
+			*words_lens = len;
+			words_lens++;
+		}
 		str++;
 	}
-	words_lens[word] = len;
-	return (words_lens);
+	*words_lens = len;
+	return (words_lens - words_count);
 }
 
-static void	write_word(char *str, char *word, char sep)
+static char const	*write_word(char const *str, char *word, char sep, int len)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (str[i] && str[i] != sep)
-	{
-		word[i] = str[i];
+	j = 0;
+	while (str[i] == sep)
 		i++;
+	while (j < len)
+	{
+		word[j] = str[i];
+		i++;
+		j++;
 	}
-	word[i] = '\0';
+	word[j] = '\0';
+	return (str + i);
+}
+
+static void	free_array(char **strings, int i)
+{
+	while (--i >= 0)
+		free(strings[i]);
+	free(strings);
 }
 
 char	**ft_split(char const *s, char c)
@@ -62,43 +88,44 @@ char	**ft_split(char const *s, char c)
 	char	**strings;
 	int		*words_lens;
 	int		words_n;
-	int		start;
 	int		i;
 
-	words_n = count_words((char *)s, c);
-	words_lens = words_len(words_n, (char *)s, c);
-	start = 0;
+	words_n = count_words(s, c);
+	words_lens = get_words_lens(words_n, s, c);
 	i = 0;
-	strings = (char **) malloc(words_n * sizeof(char *));
+	strings = (char **) malloc((words_n + 1) * sizeof(char *));
 	if (!strings)
 		return (NULL);
 	while (i < words_n)
 	{
-		strings[i] = (char *) malloc((words_lens[i] + 1) * sizeof(char *));
+		strings[i] = malloc((words_lens[i] + 1) * sizeof(char));
 		if (!strings[i])
+		{
+			free_array(strings, i);
 			return (NULL);
-		write_word((char *)s + start, strings[i], c);
-		start += words_lens[i] + 1;
+		}
+		s = write_word(s, strings[i], c, words_lens[i]);
 		i++;
 	}
+	strings[i] = NULL;
+	free(words_lens);
 	return (strings);
 }
 
-/* int main(void)
-{
-	char *str = "      split       this for   me  !   ";
-	char **strings;
-	int	i;
+/* #include <stdio.h>
 
-	printf("string:	%s\n", str);
-	printf("wcount:	%d\n", count_words(str, ' '));
-	strings = ft_split(str, ' ');
+int	main(void)
+{
+	int		i;
+	char	**tab;
+
 	i = 0;
-	while (i < count_words(str, ' '))
+	tab = ft_split("buenos dias bueenas tardes buenas noches", 32);
+	while (i < 7)
 	{
-		printf("word:	%s\n", strings[i]);
+		printf("string: %d %s\n", i, tab[i]);
 		i++;
 	}
-	//printf("test:	%lu\n", sizeof(int));
+	system ("leaks a.out");
 	return (0);
 } */
