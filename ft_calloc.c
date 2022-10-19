@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 17:53:48 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/28 14:28:41 by csantacr         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:55:53 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*res;
 
+	if (sizeof(size_t) < count && sizeof(size_t) < size)
+		return (NULL);
 	res = malloc(count * size);
 	if (!res)
 		return (NULL);
@@ -28,6 +30,7 @@ void	*ft_calloc(size_t count, size_t size)
 	int *ptr;
 	int i;
 
+	printf("size: %zu\n", sizeof(size_t));
 	ptr = ft_calloc(6, sizeof(int));
 	//ptr = calloc(6, sizeof(int));
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 18:08:59 by csantacr          #+#    #+#             */
-/*   Updated: 2022/10/12 22:19:03 by csantacr         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:45:45 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# include <string.h>
+/* # include <string.h>
 # include <stdio.h>
-# include <fcntl.h>
+# include <fcntl.h> */
 
 typedef struct s_list
 {
