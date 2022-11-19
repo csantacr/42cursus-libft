@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:11:51 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/28 20:32:13 by csantacr         ###   ########.fr       */
+/*   Updated: 2022/11/19 20:03:18 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dst_len;
 	size_t	i;
 
+	if (!dst && dstsize == 0)
+		return (0);
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
 	if (dstsize < dst_len)
@@ -38,8 +40,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	//char src[] = "dolor sit amet";
 	char src[] = "do";
 	
-	printf("return:	%lu\n", strlcat(dst, src, 0));
-	//printf("return:	%lu\n", ft_strlcat(dst, src, 0));
+	//printf("return:	%lu\n", strlcat(NULL, src, 0));
+	printf("return:	%lu\n", ft_strlcat(NULL, src, 0));
 	printf("dst:	%s\n", dst);
 	printf("src:	%s\n", src);
 	return (0);
