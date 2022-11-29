@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:46:47 by csantacr          #+#    #+#             */
-/*   Updated: 2022/10/02 23:53:07 by csantacr         ###   ########.fr       */
+/*   Updated: 2022/11/30 00:01:45 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,9 @@ char	**ft_split(char const *s, char c)
 	strings = (char **) malloc((words_n + 1) * sizeof(char *));
 	if (!strings)
 		return (NULL);
-	while (i < words_n)
+	while (i++ < words_n)
 	{
+		printf("i: %d\n", i);
 		strings[i] = malloc((words_lens[i] + 1) * sizeof(char));
 		if (!strings[i])
 		{
@@ -105,14 +106,15 @@ char	**ft_split(char const *s, char c)
 			return (NULL);
 		}
 		s = write_word(s, strings[i], c, words_lens[i]);
-		i++;
+		//i++;
 	}
+	printf("ai: %d\n", i);
 	strings[i] = NULL;
 	free(words_lens);
 	return (strings);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -120,12 +122,7 @@ int	main(void)
 	char	**tab;
 
 	i = 0;
-	tab = ft_split("buenos dias bueenas tardes buenas noches", 32);
-	while (i < 7)
-	{
-		printf("string: %d %s\n", i, tab[i]);
-		i++;
-	}
-	system ("leaks a.out");
+	tab = ft_split("buenos dias", 32);
+	
 	return (0);
-} */
+}

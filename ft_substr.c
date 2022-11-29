@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:34:27 by csantacr          #+#    #+#             */
-/*   Updated: 2022/10/03 05:09:39 by csantacr         ###   ########.fr       */
+/*   Updated: 2022/11/29 22:32:16 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 	size_t	i;
 
+	if (!s)
+		return (0);
 	if (len > ft_strlen(s))
 		len = ft_strlen(s) - start;
 	if (start >= ft_strlen(s))

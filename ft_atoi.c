@@ -12,40 +12,75 @@
 
 #include "libft.h"
 
-int check_min_max(char *n)
+/* static char	*get_numstr(char *n)
 {
-	if (*n == '-')
+	char *str;
+
+	str = malloc()
+	if (*n == '+' || *n == '-')
+		n++;
+	while (*n && (*n >= '0' && *n <= '9'))
 	{
-		if (ft_strlen(n) > 11)
+		*str = *n;
+		str++;
+		n++;
+	}
+	return (str);
+} */
+
+static int	check_long_min_max(char *n)
+{
+	
+	if (ft_strlen(n) == 19)
+	{
+		if (ft_strncmp(n, "9223372036854775807", 19) > 0)
 			return (0);
-		else if (ft_strlen(n) == 11)
-		{
-			if (ft_strncmp(n, "-2147483648", 11) > 0)
-			{
-				printf("strncmp: %d\n", ft_strncmp(n, "-2147483648", 11));
-				return (1);
-			}
-		}
 	}
-	else
+	else if (ft_strlen(n) > 19)
 	{
-		if (ft_strlen(n) > 10)
-			return (-1);
-		else if (ft_strlen(n) == 10)
+		if (ft_strlen(n) == 20 && *n == '-')
 		{
-			if (ft_strncmp(n, "2147483647", 10) > 0)
-			{
-				printf("strncmp: %d\n", ft_strncmp(n, "2147483647", 10));
-				return (1);
-			}
+			if (ft_strncmp(n, "-9223372036854775808", 20) > 0)
+				return (0);
 		}
+		else
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_atoi(const char *nptr)
 {
 	int	nbr;
+	int	sign;
+
+	nbr = 0;
+	sign = 1;
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == ' ')
+		nptr++;
+	if (!check_long_min_max((char *)nptr) && *nptr == '-')
+		return (0);
+	else if (!check_long_min_max((char *)nptr))
+		return (-1);
+	// printf("%s\n", get_numstr(*nptr));
+	if (*nptr == '-')
+	{
+		sign = -sign;
+		nptr++;
+	}
+	else if (*nptr == '+')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		nbr = (nbr * 10) + (*nptr - 48);
+		nptr++;
+	}
+	return (nbr * sign);
+}
+
+/* int	ft_atoi(const char *nptr)
+{
+	long long int	nbr;
 	int	sign;
 
 	nbr = 0;
@@ -66,18 +101,58 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	return (nbr * sign);
+} */
+
+/* static int	aux(const char *str, int i)
+{
+	int	flg;
+	int	rtn;
+	flg = 1;
+	rtn = 0;
+	if (str[i] == 43)
+		i++;
+	else if (str[i] == 45)
+	{
+		flg *= -1;
+		i++;
+	}
+	if (str[i] >= 48 && str[i] <= 57)
+	{
+		rtn = rtn + str[i] - 48;
+		i++;
+	}
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		rtn = rtn * 10 + str[i] - 48;
+		i++;
+	}
+	return (rtn * flg);
 }
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	result;
+	i = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
+		i++;
+	if (!((str[i] == 43) || (str[i] == 45) || (str[i] >= 48 && str[i] <= 57)))
+		return (0);
+	result = aux(str, i);
+	return (result);
+} */
 
 int main(void)
 {
-	// char *str = " \t \v -6543  365";
-	//char *str = "-99999999999999999999999999";
-	//char *str = "2147483647";	//len 10
-	char *str = "-2147483648";	//len 11
-
-	printf("ft: %d\n", ft_atoi(str));
-	printf("og: %d\n", atoi(str));
-	printf("minmax: %d\n", check_min_max(str));
+	//char *str = "  	  -123THERE IS A NYANCAT UNDER YOUR BED";
+	char *str = "9223372036854775810";
+	//char *str = "2147483648";
+	//char *str = "-2147483648";
+	
+	printf("size: %zu\n", sizeof(long long int));
+	printf("str: %s\n", str);
+	printf("ft:  %d\n", ft_atoi(str));
+	printf("og:  %d\n", atoi(str));
+	printf("minmax: %d\n", check_long_min_max(str));
 	printf("len: %ld\n", ft_strlen(str));
 	return (0);
 }

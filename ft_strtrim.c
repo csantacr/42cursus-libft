@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:56:50 by csantacr          #+#    #+#             */
-/*   Updated: 2022/10/03 01:31:08 by csantacr         ###   ########.fr       */
+/*   Updated: 2022/11/29 23:04:45 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*str;
 
+	if (!s1 || !set)
+		return (0);
 	i = 0;
 	while (s1[i] && check_set(s1[i], set))
 		i++;
