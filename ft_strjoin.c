@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:46:42 by csantacr          #+#    #+#             */
-/*   Updated: 2022/11/29 23:04:05 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/12 19:24:16 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,27 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	s1_len;
-	size_t	s2_len;
 	size_t	i;
 	char	*str;
 
 	if (!s1 || !s2)
 		return (0);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	str = (char *) malloc((s1_len + s2_len + 1) * sizeof(char));
+	str = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (i < s1_len)
+	while (i < ft_strlen(s1))
 	{
 		str[i] = s1[i];
 		i++;
 	}
 	i = 0;
-	while (i < s2_len)
+	while (i < ft_strlen(s2))
 	{
-		str[i + s1_len] = s2[i];
+		str[i + ft_strlen(s1)] = s2[i];
 		i++;
 	}
-	str[i + s1_len] = '\0';
+	str[i + ft_strlen(s1)] = '\0';
 	return (str);
 }
 

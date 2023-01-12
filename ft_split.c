@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:46:47 by csantacr          #+#    #+#             */
-/*   Updated: 2023/01/12 15:24:54 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/12 18:22:43 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static int	count_words(char const *s, char c)
 	}
 	return (count);
 }
+
+// first lines advance leading zeroes and signs
 
 static int	*get_words_lens(int words_count, char const *str, char sep)
 {
@@ -102,16 +104,12 @@ char	**ft_split(char const *s, char c)
 	{
 		strings[i] = malloc((words_lens[i] + 1) * sizeof(char));
 		if (!strings[i])
-		{
-			free_array(strings, i);
-			return (NULL);
-		}
+			return (free_array(strings, i), NULL);
 		s = write_word(s, strings[i], c, words_lens[i]);
 		i++;
 	}
 	strings[i] = NULL;
-	free(words_lens);
-	return (strings); //return (free(words_lens); strings);
+	return (free(words_lens), strings);
 }
 
 /* int	main(void)
@@ -119,9 +117,11 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	char	**tab;
 
-	tab = ft_split("buenos dias    que tal", 32);
+	// tab = ft_split("buenos dias    que tal", 32);
+	tab = ft_split("      split       this for   me  !       ", 32);
+	
 	i = 0;
-	while (i < 4)
+	while (i < 5)
 	{
 		printf("tab: %s\n", tab[i]);
 		i++;
