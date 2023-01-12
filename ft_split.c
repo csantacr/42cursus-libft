@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlossx <carlossx@student.42.fr>          +#+  +:+       +#+        */
+/*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:46:47 by csantacr          #+#    #+#             */
-/*   Updated: 2023/01/05 10:45:26 by carlossx         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:24:54 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,15 +90,16 @@ char	**ft_split(char const *s, char c)
 	int		words_n;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	words_n = count_words(s, c);
 	words_lens = get_words_lens(words_n, s, c);
 	i = 0;
 	strings = (char **) malloc((words_n + 1) * sizeof(char *));
 	if (!strings)
 		return (NULL);
-	while (i++ < words_n)
+	while (i < words_n)
 	{
-		printf("i: %d\n", i);
 		strings[i] = malloc((words_lens[i] + 1) * sizeof(char));
 		if (!strings[i])
 		{
@@ -106,22 +107,19 @@ char	**ft_split(char const *s, char c)
 			return (NULL);
 		}
 		s = write_word(s, strings[i], c, words_lens[i]);
-		//i++;
+		i++;
 	}
-	printf("ai: %d\n", i);
 	strings[i] = NULL;
 	free(words_lens);
 	return (strings); //return (free(words_lens); strings);
 }
 
-#include <stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
 	int		i;
 	char	**tab;
 
-	tab = ft_split("buenos dias que tal", 32);
+	tab = ft_split("buenos dias    que tal", 32);
 	i = 0;
 	while (i < 4)
 	{
@@ -129,4 +127,4 @@ int	main(void)
 		i++;
 	}
 	return (0);
-}
+} */
