@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: carlossx <carlossx@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:46:47 by csantacr          #+#    #+#             */
-/*   Updated: 2022/11/30 00:01:45 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/05 10:45:26 by carlossx         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ char	**ft_split(char const *s, char c)
 	printf("ai: %d\n", i);
 	strings[i] = NULL;
 	free(words_lens);
-	return (strings);
+	return (strings); //return (free(words_lens); strings);
 }
 
 #include <stdio.h>
@@ -121,8 +121,12 @@ int	main(void)
 	int		i;
 	char	**tab;
 
+	tab = ft_split("buenos dias que tal", 32);
 	i = 0;
-	tab = ft_split("buenos dias", 32);
-	
+	while (i < 4)
+	{
+		printf("tab: %s\n", tab[i]);
+		i++;
+	}
 	return (0);
 }

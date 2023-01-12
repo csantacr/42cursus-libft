@@ -141,7 +141,7 @@ int	ft_atoi(const char *str)
 	return (result);
 } */
 
-int main(void)
+/* int main(void)
 {
 	//char *str = "  	  -123THERE IS A NYANCAT UNDER YOUR BED";
 	char *str = "9223372036854775810";
@@ -155,4 +155,4 @@ int main(void)
 	printf("minmax: %d\n", check_long_min_max(str));
 	printf("len: %ld\n", ft_strlen(str));
 	return (0);
-}
+} */
