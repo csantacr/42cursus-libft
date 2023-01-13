@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:46:47 by csantacr          #+#    #+#             */
-/*   Updated: 2023/01/12 18:22:43 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/12 23:03:44 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ static int	count_words(char const *s, char c)
 	}
 	return (count);
 }
-
-// first lines advance leading zeroes and signs
 
 static int	*get_words_lens(int words_count, char const *str, char sep)
 {
