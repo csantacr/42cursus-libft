@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:14:38 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/20 13:18:43 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:29:54 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,3 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
-
-/*#include <stdio.h>
-
-int main(void)
-{
-	printf("%c\n", ft_tolower('A'));
-	return (0);
-}*/

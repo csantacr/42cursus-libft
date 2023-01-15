@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:06:15 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/20 13:20:42 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:29:51 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-
-/*#include <stdio.h>
-
-int main(void)
-{
-	printf("%c\n", ft_toupper('1'));
-	return (0);
-}*/

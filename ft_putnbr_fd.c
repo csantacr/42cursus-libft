@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:41:31 by csantacr          #+#    #+#             */
-/*   Updated: 2022/10/02 14:41:33 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:28:33 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd((n % 10) + 48, fd);
 	}
 }
-
-/* int main(void)
-{
-	int	fd;
-
-	fd = open("hola.txt",'w');
-	ft_putchar_fd(42, fd);
-	close(fd);
-
-	return (0);
-} */

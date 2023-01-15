@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:37:48 by csantacr          #+#    #+#             */
-/*   Updated: 2022/10/03 03:54:15 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:27:32 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-/* int main(void)
-{
-	// int nbr = -6437;
-	//int nbr = 0;
-	int nbr = 2147483647;
-
-	printf("len:	%d\n", get_len(nbr));
-	printf("return:	%s\n", ft_itoa(nbr));
-	return (0);
-} */

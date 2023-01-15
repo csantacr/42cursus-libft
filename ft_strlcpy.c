@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:16:07 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/28 18:04:23 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:30:38 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (ft_strlen((char *) src));
 }
-
-/* int main(void)
-{
-	//char str1[] = "lorem ipsum";
-	char str2[] = "dolor sit amet";
-
-	//strlcpy(str2, str1, 5);
-	printf("%lu\n", ft_strlcpy(str2, "", 0));
-	printf("%s\n", str2);
-
-	return (0);
-} */

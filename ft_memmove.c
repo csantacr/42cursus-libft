@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 18:22:27 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/27 19:55:24 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:28:50 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-/* int main(void)
-{
-	char str[] = "lorem ipsum dolor sit amet";
-	//char str2[] = "adios";
-
-	printf("antes:		%s\n", str);
-	//memcpy(str + 2, str, 6);
-	//memmove(str, str + 2, 6);
-	ft_memmove(((void *)0), ((void *)0), 5);
-	printf("despues:	%s\n", str);
-	return (0);
-} */

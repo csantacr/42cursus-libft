@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:34:27 by csantacr          #+#    #+#             */
-/*   Updated: 2022/11/29 22:32:16 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:29:57 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-
-/* int main(void)
-{
-	//char *str = "lorem_ipsum_dolor_sit_amet";
-	//char *str = "";
-
-	printf("return:	%s\n", ft_substr("hola", 2, 30));
-	return (0);
-} */

@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:46:42 by csantacr          #+#    #+#             */
-/*   Updated: 2023/01/12 19:24:16 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:30:47 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i + ft_strlen(s1)] = '\0';
 	return (str);
 }
-
-/* int main(void)
-{
-	char s1[] = "lorem ipsum";
-	char s2[] = "dolor sit amet";
-	
-	printf("%s\n", ft_strjoin(s1, s2));
-	return (0);
-} */

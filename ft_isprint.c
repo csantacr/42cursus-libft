@@ -6,9 +6,11 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 19:26:38 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/15 19:32:06 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:26:33 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

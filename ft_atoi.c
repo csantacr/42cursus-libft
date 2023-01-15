@@ -12,24 +12,6 @@
 
 #include "libft.h"
 
-/* static char	*remove_end_chars(char *n)
-{
-	char	*num;
-	int		i;
-
-	i = 0;
-	num = malloc((ft_strlen(n) + 1) * sizeof(char));
-	if (!num)
-		return (NULL);
-	while (n[i] && (n[i] > '0' && n[i] < '9'))
-	{
-		num[i] = n[i];
-		i++;
-	}
-	num[i] = '\0';
-	return (num);
-} */
-
 static char	*remove_end_chars(char *n)
 {
 	char	*num;
@@ -104,19 +86,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (nbr * sign);
 }
-
-/* int main(void)
-{
-	//(CASO 1) char *str = "-123THERE IS A NYANCAT UNDER YOUR BED";
-	//char *str = "-123THERE IS A NYANCAT UNDER YOUR BED";
-	char *str = "643643634hfhdjdg";
-	//char *str = "esto es una prueba";
-	
-	printf("size: %zu\n", sizeof(long long int));
-	printf("str: %s\n", str);
-	printf("ft:  %d\n", ft_atoi(str));
-	printf("og:  %d\n", atoi(str));
-	printf("minmax: %d\n", check_long_min_max(str));
-	printf("len: %ld\n", ft_strlen(str));
-	return (0);
-} */

@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:32:47 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/28 14:50:25 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:30:53 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,3 @@ char	*ft_strdup(const char *s1)
 	s1_dup[i] = '\0';
 	return (s1_dup);
 }
-
-/* int main(void)
-{
-	char *str = "hola que tal";
-
-	printf("%s\n", ft_strdup(str));
-	return (0);
-} */

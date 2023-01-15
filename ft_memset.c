@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 16:14:39 by csantacr          #+#    #+#             */
-/*   Updated: 2022/09/22 21:44:16 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:28:45 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-/*int main(void)
-{
-	char str[] = "hola que tal";
-
-	printf("before:	%s\n", str);
-	//memset(str + 1, '-', 3*sizeof(char));
-	ft_memset(str + 1, '-', 3*sizeof(char));
-	printf("after:	%s\n", str);
-	return (0);
-}*/

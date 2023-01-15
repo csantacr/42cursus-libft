@@ -33,16 +33,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dst_len + i] = '\0';
 	return (src_len + dst_len);
 }
-
-/* int main(void)
-{
-	char dst[20] = "lorem ipsum";
-	//char src[] = "dolor sit amet";
-	char src[] = "do";
-	
-	//printf("return:	%lu\n", strlcat(NULL, src, 0));
-	printf("return:	%lu\n", ft_strlcat(NULL, src, 0));
-	printf("dst:	%s\n", dst);
-	printf("src:	%s\n", src);
-	return (0);
-} */
