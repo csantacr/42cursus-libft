@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 14:46:47 by csantacr          #+#    #+#             */
-/*   Updated: 2023/01/15 19:20:26 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/02/05 20:29:05 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,20 +109,3 @@ char	**ft_split(char const *s, char c)
 	strings[i] = NULL;
 	return (free(words_lens), strings);
 }
-
-/* int	main(void)
-{
-	int		i;
-	char	**tab;
-
-	// tab = ft_split("buenos dias    que tal", 32);
-	tab = ft_split("      split       this for   me  !       ", 32);
-	
-	i = 0;
-	while (i < 5)
-	{
-		printf("tab: %s\n", tab[i]);
-		i++;
-	}
-	return (0);
-} */
