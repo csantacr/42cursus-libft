@@ -21,7 +21,7 @@ static char	*remove_end_chars(char *n)
 	num = malloc((ft_strlen(n) + 1) * sizeof(char));
 	if (!num)
 		return (NULL);
-	while (n[i] && (n[i] > '0' && n[i] < '9'))
+	while (n[i] && (n[i] >= '0' && n[i] <= '9'))
 	{
 		num[i] = n[i];
 		i++;
