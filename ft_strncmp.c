@@ -6,7 +6,7 @@
 /*   By: csantacr <csantacr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 17:23:13 by csantacr          #+#    #+#             */
-/*   Updated: 2023/01/15 19:30:22 by csantacr         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:59:13 by csantacr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	while (i < n - 1 && s1[i] && s2[i])
 	{
 		if (s1[i] != s2[i])
-		{
 			break ;
-		}
 		i++;
 	}
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
