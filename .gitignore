@@ -1,4 +1,5 @@
 *.out
-libft-war-machine
+*.a
 00subject
+libft-war-machine
 hola.txt
