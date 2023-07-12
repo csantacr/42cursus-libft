@@ -24,6 +24,7 @@ typedef struct s_list
 
 int		ft_putchar(char c);
 int		ft_putnbr(int nb);
+int		ft_putunbr(unsigned int nb);
 int		ft_putstr(char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
