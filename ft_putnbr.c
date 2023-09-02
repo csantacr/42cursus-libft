@@ -1,12 +1,5 @@
 #include "libft.h"
 
-/**
- * The function ft_putnbr takes an integer as input and prints it to the standard output.
- * 
- * @param nb The parameter `nb` is an integer that represents the number to be printed.
- * 
- * @return the number of characters printed.
- */
 int	ft_putnbr(int nb)
 {
 	unsigned int	unb;
